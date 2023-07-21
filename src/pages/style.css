@@ -1,0 +1,19 @@
+@media only screen and (max-width: 768px) {
+    .box-area {
+        margin: 0 10px;
+
+    }
+
+    .left-box {
+        height: 150px;
+        overflow: hidden;
+
+        .featured-image {
+            display: none;
+        }
+    }
+
+    .right-box {
+        padding: 20px;
+    }
+}
