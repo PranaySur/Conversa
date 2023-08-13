@@ -4,12 +4,12 @@ import { getStorage } from "firebase/storage";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDfrYX3qqRivv4HwbXAvv6pTdfnxvERB5A",
-    authDomain: "conversa-ps.firebaseapp.com",
-    projectId: "conversa-ps",
-    storageBucket: "conversa-ps.appspot.com",
-    messagingSenderId: "1032471060387",
-    appId: "1:1032471060387:web:df4ead11541b7b63c40416"
+    apiKey: "AIzaSyCdlCvv4gXfR1g2iTgLlCcma_rJaVUKRNk",
+    authDomain: "reactconversa.firebaseapp.com",
+    projectId: "reactconversa",
+    storageBucket: "reactconversa.appspot.com",
+    messagingSenderId: "854595969266",
+    appId: "1:854595969266:web:739d259bcee49b451b306b"
 };
 
 export const app = initializeApp(firebaseConfig);

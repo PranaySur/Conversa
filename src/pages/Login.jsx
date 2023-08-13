@@ -5,6 +5,7 @@ import { auth, provider, db } from "../firebase";
 import { doc, setDoc, getDoc, collection } from "firebase/firestore";
 import GoogleIcon from "../images/google.png";
 import Image from "../images/loginpage.png";
+import { toast } from 'react-toastify';
 
 const Login = () => {
     const navigate = useNavigate();
@@ -44,7 +45,7 @@ const Login = () => {
                     message = 'An error occurred. Please try again later.';
                     break;
             }
-            alert(message);
+            toast.error(message);
         }
     };
 
@@ -85,7 +86,7 @@ const Login = () => {
                     message = 'An error occurred. Please try again later.';
                     break;
             }
-            alert(message);
+            toast.error(message);
         }
     };
 
@@ -94,7 +95,7 @@ const Login = () => {
             await sendPasswordResetEmail(auth, email);
             setEmail("");
             setPassword("");
-            alert("Password reset email sent!");
+            toast.info("Password reset email sent!");
         } catch (error) {
             let message = 'An error occurred. Please try again later.';
             switch (error.code) {
@@ -114,7 +115,7 @@ const Login = () => {
                     message = 'An error occurred. Please try again later.';
                     break;
             }
-            alert(message);
+            toast.error(message);
         }
     };
 

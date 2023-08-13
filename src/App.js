@@ -10,10 +10,6 @@ import { AnimatePresence } from "framer-motion";
 
 function App() {
     const { currentUser } = useContext(AuthContext);
-    /**
-     * The ProtectedRoute component handles the rendering of protected routes.
-     * If the user is not authenticated, it redirects to the login page.
-     */
     const ProtectedRoute = ({ children }) => {
         if (!currentUser) {
             return <Navigate to="/login" />;

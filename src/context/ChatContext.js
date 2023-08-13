@@ -4,12 +4,6 @@ import { AuthContext } from "../context/AuthContext";
 // The ChatContext provides the chat-related context for the application.
 export const ChatContext = createContext();
 
-/**
- * The ChatContextProvider component is responsible for managing the chat state and providing it to its children.
- * @param {Object} props - The component props
- * @param {React.ReactNode} props.children - The children components
- * @returns {JSX.Element} The rendered JSX element
- */
 export const ChatContextProvider = ({ children }) => {
     const { currentUser } = useContext(AuthContext);
 
@@ -17,13 +11,6 @@ export const ChatContextProvider = ({ children }) => {
         chatId: "null",
         user: {},
     };
-
-    /**
-     * The chatReducer function defines how the chat state is updated based on dispatched actions.
-     * @param {Object} state - The current chat state
-     * @param {Object} action - The dispatched action
-     * @returns {Object} The updated chat state
-     */
     const chatReducer = (state, action) => {
         switch (action.type) {
             case "CHANGE_USER":

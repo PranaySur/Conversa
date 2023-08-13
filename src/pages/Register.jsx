@@ -6,6 +6,7 @@ import { doc, setDoc } from "firebase/firestore";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import Image from "../images/loginpage.png";
 import ImageIcon from '@mui/icons-material/Image';
+import { toast } from 'react-toastify';
 import "./style.css"
 
 const Register = () => {
@@ -21,11 +22,11 @@ const Register = () => {
     const handleEmailSignUp = async (e) => {
         e.preventDefault();
         if (name === '') {
-            alert("Please enter your name to sign up.");
+            toast.info("Please enter your name to sign up.");
             return;
         }
         if (file === null) {
-            alert("Please Upload your profile picture.");
+            toast.info("Please Upload your profile picture.");
             return;
         }
         try {
@@ -51,7 +52,7 @@ const Register = () => {
                         navigate("/");
                     });
                 } catch (error) {
-                    alert(error.message);
+                    toast.error(error.message);
                 }
             });
         }
@@ -78,7 +79,7 @@ const Register = () => {
                     message = "An error occurred. Please try again later.";
                     break;
             }
-            alert(message);
+            toast.error(message);
         }
     };
     return (
